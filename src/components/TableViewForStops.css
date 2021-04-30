@@ -1,4 +1,9 @@
-.table{
-   
-    width: 50%;
+.main__div {
+  display: grid !important;
+  place-items: center;
+  margin-top: 24px;
+}
+
+.MuiPaper-root {
+  width: fit-content;
 }

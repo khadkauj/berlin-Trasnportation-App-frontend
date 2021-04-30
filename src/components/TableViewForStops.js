@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -18,6 +18,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 export default function TableViewForStops({ data }) {
 
+    const [state, setstate] = useState()
     data.forEach(element => {
         if (element.id === null) {
             const index = data.indexOf(element)
@@ -26,18 +27,22 @@ export default function TableViewForStops({ data }) {
         
     });
 
-     const setFav = (stopId) => {
+    const setFav = (stopId) => {
         localStorage.setItem(stopId, "fav")
+        setstate({})
     }
 
     const removeFav = (stopId) => {
         localStorage.removeItem(stopId)
+        setstate({})
+
     }
 
     return (
-        <div className="" >
-            <TableContainer component={Card}>
-                <Table className="table" aria-label="simple table">
+        <div className="main__div" >
+            <Paper elevation={3} className="paper" >
+            <TableContainer >
+                <Table className="" aria-label="simple table">
                     <TableHead>
                         <TableRow>
                             <TableCell>Stops</TableCell>
@@ -66,13 +71,14 @@ export default function TableViewForStops({ data }) {
                                 <TableCell align="right"><Link to={row.id}>See more</Link></TableCell>
                                 <TableCell align="right">
                                 {localStorage.getItem(row.id) === "fav" ?
-                                        <FavoriteIcon onClick={e => { removeFav(row.id); console.log("hah"); }}>SetFav</FavoriteIcon> : <FavoriteBorderIcon onClick={e => {setFav(row.id)}}>RemFav</FavoriteBorderIcon>}
+                                        <FavoriteIcon onClick={e => { removeFav(row.id); }}>SetFav</FavoriteIcon> : <FavoriteBorderIcon onClick={e => {setFav(row.id)}}>RemFav</FavoriteBorderIcon>}
                                 </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
-            </TableContainer>
+                </TableContainer>
+                </Paper>
         </div>
 
     );
