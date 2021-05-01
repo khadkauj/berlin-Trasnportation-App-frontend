@@ -28,7 +28,9 @@ const MainComponent = () => {
 
     return (
         <div>
-            <h1>Berlin Transportation APP</h1>
+            <div style={{"position": "sticky", "top": 0, "backgroundColor": "white", "padding" : "10px", "zIndex": 1}}>
+            <h3 >Berlin Transportation APP</h3>
+            </div>
             <FormControl className="">
                 <InputLabel htmlFor="input-with-icon-adornment">Enter your stop.</InputLabel>
                 <Input

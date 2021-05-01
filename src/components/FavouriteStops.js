@@ -39,7 +39,7 @@ const FavouriteStops = ({ state, ids }) => {
         <div className="main__div" >
             {/* Stops though favourite but if have no availability won't appear */}
             <h5>Favourite Stops with Availability</h5>
-            <Paper elevation={3} className="paper" >
+            <Paper elevation={3} className="paper"  style={{"marginBottom": "40px"}}>
                 <TableContainer >
                     <Table className="" aria-label="simple table">
                         <TableHead>

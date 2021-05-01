@@ -1,4 +1,6 @@
 {
+    "proxy": "https://v5.vbb.transport.rest/",
+
   "homepage": "https://khadkauj.github.io/berlin-Trasnportation-App",
   "name": "berlin-traffic-app",
   "version": "0.1.0",
