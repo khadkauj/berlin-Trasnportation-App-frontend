@@ -9,31 +9,27 @@ import FavouriteStops from "./FavouriteStops";
 const MainComponent = () => {
     const [stop, setstop] = useState("Airport");
     const [stopsList, setstopsList] = useState([]);
-    console.log("*", stop);
-
     useEffect(() => {
         const client = createClient(vbbProfile, "my-awesome-program");
-
         if (stop !== "") {
             client
                 .locations(stop, { results: 5 })
                 .then((stopsList) => {
-                    console.log("stoplistaa", stopsList);
                     setstopsList(stopsList);
                 })
                 .catch(console.error);
         }
-
     }, [stop]);
 
     return (
         <div>
-            <div style={{"position": "sticky", "top": 0, "backgroundColor": "white", "padding" : "10px", "zIndex": 1}}>
-            <h3 >Berlin Transportation APP</h3>
+            <div style={{ "position": "sticky", "top": 0, "backgroundColor": "white", "padding": "10px", "zIndex": 1 }}>
+                <h1 style={{ "marginTop": 0 }} >Berlin Transportation APP</h1>
             </div>
             <FormControl className="">
                 <InputLabel htmlFor="input-with-icon-adornment">Enter your stop.</InputLabel>
                 <Input
+                    autoFocus
                     value={stop}
                     onChange={(event) => { setstop(event.target.value) }}
                     id="input-with-icon-adornment"

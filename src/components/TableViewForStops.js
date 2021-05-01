@@ -60,15 +60,15 @@ export default function TableViewForStops({ data }) {
                     <Table className="" aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell>Stops</TableCell>
-                                <TableCell >Bus</TableCell>
-                                <TableCell >Tram</TableCell>
-                                <TableCell >Ferry</TableCell>
-                                <TableCell >Suburban</TableCell>
-                                <TableCell >Express</TableCell>
-                                <TableCell >Regional</TableCell>
-                                <TableCell >See More</TableCell>
-                                <TableCell >Mark Favourite</TableCell>
+                                <TableCell align="center">Stops</TableCell>
+                                <TableCell align="center" >Bus</TableCell>
+                                <TableCell align="center">Tram</TableCell>
+                                <TableCell align="center">Ferry</TableCell>
+                                <TableCell align="center">Suburban</TableCell>
+                                <TableCell align="center">Express</TableCell>
+                                <TableCell align="center">Regional</TableCell>
+                                <TableCell align="center">See More</TableCell>
+                                <TableCell align="center">Mark Favourite</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -77,14 +77,14 @@ export default function TableViewForStops({ data }) {
                                     <TableCell component="th" scope="row">
                                         {row.name}
                                     </TableCell>
-                                    <TableCell >{row.products?.bus === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                    <TableCell >{row.products?.tram === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                    <TableCell >{row.products?.ferry === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                    <TableCell >{row.products?.suburban === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                    <TableCell > {row.products?.express === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                    <TableCell >{row.products?.regional === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                    <TableCell ><Link to={row.id}>See more</Link></TableCell>
-                                    <TableCell >
+                                    <TableCell align="center" >{row.products?.bus === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                    <TableCell align="center">{row.products?.tram === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                    <TableCell align="center">{row.products?.ferry === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                    <TableCell align="center">{row.products?.suburban === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                    <TableCell align="center"> {row.products?.express === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                    <TableCell align="center">{row.products?.regional === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                    <TableCell align="center"><Link to={row.id}>See more</Link></TableCell>
+                                    <TableCell align="center">
                                         {localStorage.getItem(row.id) === "fav" ?
                                             <FavoriteIcon onClick={e => { removeFav(row.id); }}>SetFav</FavoriteIcon> : <FavoriteBorderIcon onClick={e => { setFav(row.id) }}>RemFav</FavoriteBorderIcon>}
                                     </TableCell>
