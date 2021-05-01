@@ -9,7 +9,6 @@ bus/tram/ferry/suburban/express/regional.
   was cors issue(for the moment) which wasn't solved. So, please use this google chrome extension https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf and activate, Only then the api request would have cors header and eventually
   it gets us the required data. All possible options are shown in a table. The above issue would be solved pretty soon and then you can simply browse it from any browser without any extensions. </p>
 
-
 2. If the user selects a stop, route the user to the detail page of that stop where the user can see
 the departures from the stop. Use the API provided results to show as much useful information
 about the selected stop and its departures as possible to make the app helpful.
