@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import FavouriteStops from "./FavouriteStops";
-import TableViewForStopsDetails from "./TableViewForStopsDetails"
+import TableViewForStopsDetails from "./TableViewForStopsDeparturesComponent"
 const createClient = require("hafas-client");
 const vbbProfile = require("hafas-client/p/vbb");
 const StopDetails = () => {
