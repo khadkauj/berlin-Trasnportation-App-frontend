@@ -1,4 +1,4 @@
-I was asked by someone to do this small project where the task is to :
+I was asked to do this small project where the task is to :
 
 Create a simple web app that uses the public transport API of Berlin
 (https://v5.vbb.transport.rest/api.html) to search through stops. When showing results, show
@@ -26,3 +26,6 @@ of searching every time. This information needs to be client-side only.
     component. These datas are stores in local storage and I did some engineering to set the array of stops in local storage.
     We might have also used firebase or similar services with login/logout functionalities where user can save all his data
     speicific to client, but I though it will be unnecessary.
+
+
+Build using latest versions and features of React Js.
