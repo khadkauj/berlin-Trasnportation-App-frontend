@@ -1,6 +1,5 @@
 {
   "homepage": "https://khadkauj.github.io/berlin-Trasnportation-App",
-  "proxy": "http://localhost:3000",
   "name": "berlin-traffic-app",
   "version": "0.1.0",
   "private": true,

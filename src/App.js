@@ -2,8 +2,9 @@ import React from "react";
 import "./App.css";
 import MainComponent from "./components/MainComponent";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, HashRouter, Route } from "react-router-dom";
 import StopDetails from "./components/StopDetails";
+import FavouriteStops from "./components/FavouriteStops";
 
 function App() {
   return (
@@ -12,15 +13,16 @@ function App() {
         <div>
           {/* A <Switch> looks through its children <Route>s and
     renders the first one that matches the current URL. */}
-          <Switch>
+          <HashRouter>
             
             <Route path="/:stop">
               <StopDetails />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <MainComponent />
+              
             </Route>
-          </Switch>
+          </HashRouter>
         </div>
       </Router>
     </div>

@@ -4,6 +4,7 @@ import vbbProfile from "hafas-client/p/vbb";
 import TableViewForStops from "./TableViewForStops";
 import { FormControl, Input, InputAdornment, InputLabel } from "@material-ui/core";
 import PlaceIcon from '@material-ui/icons/Place';
+import FavouriteStops from "./FavouriteStops";
 
 const MainComponent = () => {
     const [stop, setstop] = useState("Airport");
@@ -17,7 +18,7 @@ const MainComponent = () => {
             client
                 .locations(stop, { results: 5 })
                 .then((stopsList) => {
-                    console.log(stopsList);
+                    console.log("stoplistaa", stopsList);
                     setstopsList(stopsList);
                 })
                 .catch(console.error);

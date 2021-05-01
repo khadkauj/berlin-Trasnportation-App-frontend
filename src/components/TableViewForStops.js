@@ -14,26 +14,38 @@ import ClearIcon from '@material-ui/icons/Clear';
 import "./TableViewForStops.css"
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavouriteStops from './FavouriteStops';
 
 
 export default function TableViewForStops({ data }) {
 
     const [state, setstate] = useState()
+    const idsFromLocalStorage = JSON.parse(localStorage.getItem("Favourite"))
+    const arraysOfIds = idsFromLocalStorage?.split("A")
+    
     data.forEach(element => {
         if (element.id === null) {
             const index = data.indexOf(element)
             data.splice(index, 1)
+            // arraysOfIdFromLocalStorage.push(element.id)
         }
         
     });
 
     const setFav = (stopId) => {
         localStorage.setItem(stopId, "fav")
+        localStorage.setItem("Favourite", JSON.stringify(localStorage.getItem("Favourite") ? JSON.parse(localStorage.getItem("Favourite")) + "A"+ stopId : stopId))
         setstate({})
+
     }
 
     const removeFav = (stopId) => {
         localStorage.removeItem(stopId)
+        // arraysOfIdFromLocalStorage?.forEach(element => {
+        //     if (element === stopId) {
+        //         arraysOfIdFromLocalStorage.splice(arraysOfIdFromLocalStorage.indexOf(element), 1)
+        //     }
+        // });
         setstate({})
 
     }
@@ -46,14 +58,14 @@ export default function TableViewForStops({ data }) {
                     <TableHead>
                         <TableRow>
                             <TableCell>Stops</TableCell>
-                            <TableCell align="right">Bus</TableCell>
-                            <TableCell align="right">Tram</TableCell>
-                            <TableCell align="right">Ferry</TableCell>
-                            <TableCell align="right">Suburban</TableCell>
-                            <TableCell align="right">Express</TableCell>
-                            <TableCell align="right">Regional</TableCell>
-                            <TableCell align="right">See More</TableCell>
-                            <TableCell align="right">Mark Favourite</TableCell>
+                            <TableCell >Bus</TableCell>
+                            <TableCell >Tram</TableCell>
+                            <TableCell >Ferry</TableCell>
+                            <TableCell >Suburban</TableCell>
+                            <TableCell >Express</TableCell>
+                            <TableCell >Regional</TableCell>
+                            <TableCell >See More</TableCell>
+                            <TableCell >Mark Favourite</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -62,14 +74,14 @@ export default function TableViewForStops({ data }) {
                                 <TableCell component="th" scope="row">
                                     {row.name}
                                 </TableCell>
-                                <TableCell align="right">{row.products?.bus === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                <TableCell align="right">{row.products?.tram === true ? <DoneIcon />  : <ClearIcon></ClearIcon>}</TableCell>
-                                <TableCell align="right">{row.products?.ferry === true ? <DoneIcon />  : <ClearIcon></ClearIcon>}</TableCell>
-                                <TableCell align="right">{row.products?.suburban === true ? <DoneIcon />  : <ClearIcon></ClearIcon>}</TableCell>
-                                <TableCell align="right"> {row.products?.express === true ? <DoneIcon />  : <ClearIcon></ClearIcon>}</TableCell>
-                                <TableCell align="right">{row.products?.regional === true ? <DoneIcon />  : <ClearIcon></ClearIcon>}</TableCell>
-                                <TableCell align="right"><Link to={row.id}>See more</Link></TableCell>
-                                <TableCell align="right">
+                                <TableCell >{row.products?.bus === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                <TableCell >{row.products?.tram === true ? <DoneIcon />  : <ClearIcon></ClearIcon>}</TableCell>
+                                <TableCell >{row.products?.ferry === true ? <DoneIcon />  : <ClearIcon></ClearIcon>}</TableCell>
+                                <TableCell >{row.products?.suburban === true ? <DoneIcon />  : <ClearIcon></ClearIcon>}</TableCell>
+                                <TableCell > {row.products?.express === true ? <DoneIcon />  : <ClearIcon></ClearIcon>}</TableCell>
+                                <TableCell >{row.products?.regional === true ? <DoneIcon />  : <ClearIcon></ClearIcon>}</TableCell>
+                                <TableCell ><Link to={row.id}>See more</Link></TableCell>
+                                <TableCell >
                                 {localStorage.getItem(row.id) === "fav" ?
                                         <FavoriteIcon onClick={e => { removeFav(row.id); }}>SetFav</FavoriteIcon> : <FavoriteBorderIcon onClick={e => {setFav(row.id)}}>RemFav</FavoriteBorderIcon>}
                                 </TableCell>
@@ -78,7 +90,8 @@ export default function TableViewForStops({ data }) {
                     </TableBody>
                 </Table>
                 </TableContainer>
-                </Paper>
+            </Paper>
+             <FavouriteStops ids={arraysOfIds}  />
         </div>
 
     );

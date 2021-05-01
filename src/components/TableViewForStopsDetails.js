@@ -13,34 +13,50 @@ import DoneIcon from '@material-ui/icons/Done';
 import ClearIcon from '@material-ui/icons/Clear';
 import "./TableViewForStops.css"
 
-export default function TableViewForStopsDetails({ data }) {
+const TableViewForStopsDetails = ({ data }) => {
+    console.log("***", data);
    
     return (
         <div className="main__div" >
+
             <h1>Possible stops</h1>
-            <Paper elevation={3} className="paper" >
+            {data.length > 0 ? <Paper elevation={3} className="paper" >
             <TableContainer component={Card}>
                 <Table className="" aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell align="right">Direction</TableCell>
-                            <TableCell align="right">Platform No.</TableCell>
-                            <TableCell align="right">Scheduled Date</TableCell>
+                            <TableCell >Direction</TableCell>
+                            <TableCell >Platform No.</TableCell>
+                                <TableCell >Scheduled Date</TableCell>
+                            <TableCell >Mode</TableCell>
+                            <TableCell >Operator</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {data.map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell align="right">{row.direction != null ? row.direction : "NA"}</TableCell>
-                                <TableCell align="right">{row.platform != null ? row.platform : "NA"}</TableCell>
-                                <TableCell align="right">{row.plannedWhen != null ? row.plannedWhen : "NA"}</TableCell>
+                            <TableRow key={row.tripId}>
+                                <TableCell >{row.direction != null ? row.direction : "NA"}</TableCell>
+                                <TableCell >{row.platform != null ? row.platform : "NA"}</TableCell>
+                                <TableCell >{row.plannedWhen != null ? new Date(row.plannedWhen).toLocaleString() : "NA"}</TableCell>
+                                <TableCell >{row.line.mode != null ? row.line.mode : "NA"}</TableCell>
+                                <TableCell >{row.line.operator.name != null ? row.line.operator.name : "NA"}</TableCell>
+
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
                 </TableContainer>
-                </Paper>
+            </Paper> :
+                <h3>No Data Available</h3>
+        
+         
+            }
+
+           
         </div>
 
     );
 }
+
+export default TableViewForStopsDetails;
+
