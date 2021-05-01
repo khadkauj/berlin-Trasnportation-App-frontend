@@ -1,10 +1,8 @@
 import React from "react";
 import "./App.css";
 import MainComponent from "./components/MainComponent";
-
 import { BrowserRouter as Router, HashRouter, Route } from "react-router-dom";
-import StopDetails from "./components/StopDetails";
-import FavouriteStops from "./components/FavouriteStops";
+import StopDetails from "./components/StopDetailsComponent";
 
 function App() {
   return (
@@ -14,13 +12,11 @@ function App() {
           {/* A <Switch> looks through its children <Route>s and
     renders the first one that matches the current URL. */}
           <HashRouter>
-            
             <Route path="/:stop">
               <StopDetails />
             </Route>
             <Route exact path="/">
               <MainComponent />
-              
             </Route>
           </HashRouter>
         </div>

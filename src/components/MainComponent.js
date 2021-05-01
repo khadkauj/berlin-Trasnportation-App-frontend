@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import createClient from "hafas-client";
 import vbbProfile from "hafas-client/p/vbb";
-import TableViewForStops from "./TableViewForStops";
+import TableViewForStops from "./TableViewForStopsComponents";
 import { FormControl, Input, InputAdornment, InputLabel } from "@material-ui/core";
 import PlaceIcon from '@material-ui/icons/Place';
-import FavouriteStops from "./FavouriteStops";
 
 const MainComponent = () => {
     const [stop, setstop] = useState("Airport");

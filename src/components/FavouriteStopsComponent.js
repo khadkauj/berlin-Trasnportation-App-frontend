@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 import DoneIcon from '@material-ui/icons/Done';
 import ClearIcon from '@material-ui/icons/Clear';
 import "./TableViewForStops.css"
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 const createClient = require('hafas-client')
 const vbbProfile = require('hafas-client/p/vbb')
 
