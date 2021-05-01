@@ -27,47 +27,48 @@ const FavouriteStops = ({ state, ids }) => {
     return (
         <div className="main__div" >
             {/* Stops though favourite but if have no availability won't appear */}
-            {favouriteStops.length === 0 ? <p>No Favourite Stops</p> : <div><h5>Favourite Stops with Availability</h5>
-                <Paper elevation={3} className="paper" style={{ "marginBottom": "40px" }}>
-                    <TableContainer >
-                        <Table className="" aria-label="simple table">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell>Stops</TableCell>
-                                    <TableCell >Bus</TableCell>
-                                    <TableCell >Tram</TableCell>
-                                    <TableCell >Ferry</TableCell>
-                                    <TableCell >Suburban</TableCell>
-                                    <TableCell >Express</TableCell>
-                                    <TableCell >Regional</TableCell>
-                                    <TableCell >See More</TableCell>
-                                    <TableCell style={{ display: "none" }}  >Mark Favourite</TableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {favouriteStops.map((row) => (
-                                    row !== undefined ?
-                                        <TableRow key={row.id}>
-                                            <TableCell component="th" scope="row">
-                                                {row?.name}
-                                            </TableCell>
-                                            <TableCell >{row?.products?.bus === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                            <TableCell >{row?.products?.tram === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                            <TableCell >{row?.products?.ferry === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                            <TableCell >{row?.products?.suburban === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                            <TableCell > {row?.products?.express === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                            <TableCell >{row?.products?.regional === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
-                                            <TableCell ><Link to={row.id}>See more</Link></TableCell>
+            {favouriteStops.length === 0 ? <p>No Favourite Stops</p> :
+                <div ><div style={{ "margin": "24px" }} ><strong>Favourite Stops with Availability</strong></div>
+                    <Paper elevation={3} className="paper" >
+                        <TableContainer >
+                            <Table className="" aria-label="simple table">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell>Stops</TableCell>
+                                        <TableCell >Bus</TableCell>
+                                        <TableCell >Tram</TableCell>
+                                        <TableCell >Ferry</TableCell>
+                                        <TableCell >Suburban</TableCell>
+                                        <TableCell >Express</TableCell>
+                                        <TableCell >Regional</TableCell>
+                                        <TableCell >See More</TableCell>
+                                        <TableCell style={{ display: "none" }}  >Mark Favourite</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {favouriteStops.map((row) => (
+                                        row !== undefined ?
+                                            <TableRow key={row.id}>
+                                                <TableCell component="th" scope="row">
+                                                    {row?.name}
+                                                </TableCell>
+                                                <TableCell >{row?.products?.bus === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                                <TableCell >{row?.products?.tram === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                                <TableCell >{row?.products?.ferry === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                                <TableCell >{row?.products?.suburban === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                                <TableCell > {row?.products?.express === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                                <TableCell >{row?.products?.regional === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
+                                                <TableCell ><Link to={row.id}>See more</Link></TableCell>
 
-                                        </TableRow> : < ></>
+                                            </TableRow> : < ></>
 
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                </Paper></div>}
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    </Paper></div>}
 
-            <footer style={{ "paddingBottom": "54px" }}><strong>Created by Ujjwal for Fun</strong></footer>
+            <div style={{ "padding": "54px" }}><strong>Created By Ujjwal For Fun</strong></div>
         </div>
     )
 }

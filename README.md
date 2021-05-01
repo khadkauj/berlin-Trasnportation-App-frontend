@@ -1,44 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+I was asked by someone to do this small project where the task is to :
 
-## Available Scripts
+Create a simple web app that uses the public transport API of Berlin
+(https://v5.vbb.transport.rest/api.html) to search through stops. When showing results, show
+which transport options are available in the resulting stop(s). Example transport options are:
+bus/tram/ferry/suburban/express/regional.
 
-In the project directory, you can run:
+    -> hafas client method(https://github.com/public-transport/hafas-client/blob/5/docs/readme.md) was used to retrieve data. There was cors issue(for the moment) which wasn't solved. So, please use this google chrome extension https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf and activate, Only then the api request would have cors header and eventually it gets us the required data. All possible options are shown in a table.
 
-### `npm start`
+    The above issue would be solved pretty soon and then you can simply browse it from any browser without any extensions.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If the user selects a stop, route the user to the detail page of that stop where the user can see
+the departures from the stop. Use the API provided results to show as much useful information
+about the selected stop and its departures as possible to make the app helpful.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+    ->On clicking "see more" users are routed to another component. Depending on available data, user can see all departures from their selected stop with scheduled date, platform number and mode of transportation.
 
-### `npm test`
+Users should be able to mark some stops favorite so that they can quickly access them instead
+of searching every time. This information needs to be client-side only.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ->Users can also mark the stops as favourite, and if it has any availability it will be rendered in Favourite stops component. These datas are stores in local storage and I did some engineering to set the array of stops in local storage. We might have also used firebase or similar services with login/logout functionalities where user can save all his data speicific to client, but I though it will be unnecessary.
