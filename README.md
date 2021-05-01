@@ -5,10 +5,9 @@ Create a simple web app that uses the public transport API of Berlin
 which transport options are available in the resulting stop(s). Example transport options are:
 bus/tram/ferry/suburban/express/regional.
 
-  <ul><li>hafas client method(https://github.com/public-transport/hafas-client/blob/5/docs/readme.md) was used to retrieve data.
-    There was cors issue(for the moment) which wasn't solved. So, please use this google chrome extension
-    https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf and activate, Only
-    then the api request would have cors header and eventually it gets us the required data. All possible options are shown in a table.
+  <ul><li>hafas client method(https://github.com/public-transport/hafas-client/blob/5/docs/readme.md) was used to retrieve data. There
+  was cors issue(for the moment) which wasn't solved. So, please use this google chrome extension https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf and activate, Only then the api request would have cors header and eventually
+  it gets us the required data. All possible options are shown in a table.
 
    The above issue would be solved pretty soon and then you can simply browse it from any browser without any extensions. </li></ul>
 
