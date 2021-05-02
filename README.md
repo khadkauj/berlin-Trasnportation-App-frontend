@@ -1,8 +1,8 @@
 Live Demo : <a href="https://khadkauj.github.io/berlin-Trasnportation-App-frontend/" > Berlin Transportation APP- Guide </a>
 
-I was asked to do this small project where the task is to :
+I was asked to do this small project where the task is to
 
-1. Create a simple web app that uses the public transport API of Berlin
+Create a simple web app that uses the public transport API of Berlin
 (https://v5.vbb.transport.rest/api.html) to search through stops. When showing results, show
 which transport options are available in the resulting stop(s). Example transport options are:
 bus/tram/ferry/suburban/express/regional.
