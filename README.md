@@ -2,7 +2,7 @@ Live Demo: <a href="https://khadkauj.github.io/berlin-Trasnportation-App-fronten
 
 Stacks used : ReactJs, Express, Axios.
 
-This repository contains a frontend(reactjs.) The corresponding express backend is available
+This repository contains the frontend part of application(reactjs.) The corresponding express backend is available
 at git repository: https://github.com/khadkauj/berlin-Trasnportation-App-expressBackend
 
 ***********************************************************************************************
