@@ -29,7 +29,7 @@ const TableViewForStopsDetails = ({ data }) => {
                         <TableBody>
                             {data.map((row) => (
                                 <TableRow key={row.tripId}>
-                                    <TableCell align="center">{row.direction != null ? row.direction : "NA"}</TableCell>
+                                    <TableCell align="right">{row.direction != null ? row.direction : "NA"}</TableCell>
                                     <TableCell align="center">{row.platform != null ? row.platform : "NA"}</TableCell>
                                     <TableCell align="center">{row.plannedWhen != null ? new Date(row.plannedWhen).toLocaleString() : "NA"}</TableCell>
                                     <TableCell align="center">{row.line.mode != null ? row.line.mode : "NA"}</TableCell>
