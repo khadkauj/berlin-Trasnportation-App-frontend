@@ -8,7 +8,6 @@ import axios from "axios"
 
 
 const FavouriteStops = ({ state, ids }) => {
-    console.log("ids", ids);
     const [favouriteStops, setfavouriteStops] = useState([])
     useEffect(() => {
         let arrayOfPromises = ids?.map(id => (
@@ -24,8 +23,6 @@ const FavouriteStops = ({ state, ids }) => {
             )
         }
     }, [])
-
-    console.log("fav", favouriteStops);
 
     return (
         <div className="main__div" >
