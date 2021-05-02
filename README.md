@@ -31,7 +31,7 @@ about the selected stop and its departures as possible to make the app helpful.
 Users should be able to mark some stops favorite so that they can quickly access them instead
 of searching every time. This information needs to be client-side only.
 
-    ➡ Users can also mark stops as favourite, and if it has any
+    ➡ Users can also mark stops as favourite, and only if it has any
     availability it will be rendered in Favourite stops component.
     
     ➡ In the application, I engineered local storage
