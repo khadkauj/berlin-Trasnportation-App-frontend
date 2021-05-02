@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/berlin-Trasnportation-App/static/css/main.558c764e.chunk.css",
-    "main.js": "/berlin-Trasnportation-App/static/js/main.4a694acf.chunk.js",
-    "main.js.map": "/berlin-Trasnportation-App/static/js/main.4a694acf.chunk.js.map",
+    "main.js": "/berlin-Trasnportation-App/static/js/main.c8e09623.chunk.js",
+    "main.js.map": "/berlin-Trasnportation-App/static/js/main.c8e09623.chunk.js.map",
     "runtime-main.js": "/berlin-Trasnportation-App/static/js/runtime-main.b9dfa9bb.js",
     "runtime-main.js.map": "/berlin-Trasnportation-App/static/js/runtime-main.b9dfa9bb.js.map",
-    "static/js/2.47f127ec.chunk.js": "/berlin-Trasnportation-App/static/js/2.47f127ec.chunk.js",
-    "static/js/2.47f127ec.chunk.js.map": "/berlin-Trasnportation-App/static/js/2.47f127ec.chunk.js.map",
+    "static/js/2.87ecb532.chunk.js": "/berlin-Trasnportation-App/static/js/2.87ecb532.chunk.js",
+    "static/js/2.87ecb532.chunk.js.map": "/berlin-Trasnportation-App/static/js/2.87ecb532.chunk.js.map",
     "index.html": "/berlin-Trasnportation-App/index.html",
     "static/css/main.558c764e.chunk.css.map": "/berlin-Trasnportation-App/static/css/main.558c764e.chunk.css.map",
-    "static/js/2.47f127ec.chunk.js.LICENSE.txt": "/berlin-Trasnportation-App/static/js/2.47f127ec.chunk.js.LICENSE.txt"
+    "static/js/2.87ecb532.chunk.js.LICENSE.txt": "/berlin-Trasnportation-App/static/js/2.87ecb532.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b9dfa9bb.js",
-    "static/js/2.47f127ec.chunk.js",
+    "static/js/2.87ecb532.chunk.js",
     "static/css/main.558c764e.chunk.css",
-    "static/js/main.4a694acf.chunk.js"
+    "static/js/main.c8e09623.chunk.js"
   ]
 }
