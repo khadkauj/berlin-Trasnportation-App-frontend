@@ -9,7 +9,7 @@ bus/tram/ferry/suburban/express/regional.
   
     ➡hafas client method(https://github.com/public-transport/hafas-client/blob/5/docs/readme.md) was used to retrieve data. 
      We use an express application to query our data and provide it to our ReactJs application which then displays all our data
-    in a table<
+    in a table
 
 If the user selects a stop, route the user to the detail page of that stop where the user can see
 the departures from the stop. Use the API provided results to show as much useful information
