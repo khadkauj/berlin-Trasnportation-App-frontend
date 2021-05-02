@@ -17,6 +17,7 @@ const MainComponent = () => {
         <div>
             <div style={{ "position": "sticky", "top": 0, "backgroundColor": "white", "padding": "10px", "zIndex": 1 }}>
                 <h1 style={{ "marginTop": 0 }} >Berlin Transportation APP</h1>
+                <p style={{ "marginTop": "-14px", "fontFamily" : "cursive" }} ><strong>Your Guide to every stop in Berlin</strong></p>
             </div>
             <FormControl className="">
                 <InputLabel htmlFor="input-with-icon-adornment">Enter your stop.</InputLabel>
