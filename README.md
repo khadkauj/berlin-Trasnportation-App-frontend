@@ -1,5 +1,12 @@
 Live Demo: <a href="https://khadkauj.github.io/berlin-Trasnportation-App-frontend/" > Berlin Transportation APP- Guide </a>
 
+Stacks used : ReactJs, Express, Axios.
+
+This repository contains a frontend(reactjs.) The corresponding express backend is available
+at git repository: https://github.com/khadkauj/berlin-Trasnportation-App-expressBackend
+
+***********************************************************************************************
+
 I was asked to do this small project where the task is to:
 
 Create a simple web app that uses the public transport API of Berlin
@@ -32,6 +39,3 @@ of searching every time. This information needs to be client-side only.
     ➡ We might have also used firebase or similar services with 
     login/logout functionalities where users can save all his data
     speicific to them, but I though it will be unnecessary.
-
-
-Stacks used : ReactJs, Express, Axios.
