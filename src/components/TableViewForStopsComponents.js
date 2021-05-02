@@ -16,7 +16,6 @@ import FavouriteStops from './FavouriteStopsComponent';
 
 
 export default function TableViewForStops({ data }) {
-
     const [state, setstate] = useState({})
     const idsFromLocalStorage = JSON.parse(localStorage.getItem("Favourite"))
     const arraysOfIds = idsFromLocalStorage?.split("A")

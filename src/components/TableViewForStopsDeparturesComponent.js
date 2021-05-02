@@ -19,21 +19,21 @@ const TableViewForStopsDetails = ({ data }) => {
                     <Table className="" aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell >Direction</TableCell>
-                                <TableCell >Platform No.</TableCell>
-                                <TableCell >Scheduled Date</TableCell>
-                                <TableCell >Mode</TableCell>
-                                <TableCell >Operator</TableCell>
+                                <TableCell align="center" >Direction</TableCell>
+                                <TableCell align="center" >Platform No.</TableCell>
+                                <TableCell align="center">Scheduled Date</TableCell>
+                                <TableCell align="center">Mode</TableCell>
+                                <TableCell align="center">Operator</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {data.map((row) => (
                                 <TableRow key={row.tripId}>
-                                    <TableCell >{row.direction != null ? row.direction : "NA"}</TableCell>
-                                    <TableCell >{row.platform != null ? row.platform : "NA"}</TableCell>
-                                    <TableCell >{row.plannedWhen != null ? new Date(row.plannedWhen).toLocaleString() : "NA"}</TableCell>
-                                    <TableCell >{row.line.mode != null ? row.line.mode : "NA"}</TableCell>
-                                    <TableCell >{row.line.operator.name != null ? row.line.operator.name : "NA"}</TableCell>
+                                    <TableCell align="center">{row.direction != null ? row.direction : "NA"}</TableCell>
+                                    <TableCell align="center">{row.platform != null ? row.platform : "NA"}</TableCell>
+                                    <TableCell align="center">{row.plannedWhen != null ? new Date(row.plannedWhen).toLocaleString() : "NA"}</TableCell>
+                                    <TableCell align="center">{row.line.mode != null ? row.line.mode : "NA"}</TableCell>
+                                    <TableCell align="center">{row.line.operator.name != null ? row.line.operator.name : "NA"}</TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

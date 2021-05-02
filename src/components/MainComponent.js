@@ -1,23 +1,16 @@
 import React, { useEffect, useState } from "react";
-import createClient from "hafas-client";
-import vbbProfile from "hafas-client/p/vbb";
 import TableViewForStops from "./TableViewForStopsComponents";
 import { FormControl, Input, InputAdornment, InputLabel } from "@material-ui/core";
 import PlaceIcon from '@material-ui/icons/Place';
+import axios from "axios"
 
 const MainComponent = () => {
     const [stop, setstop] = useState("Airport");
     const [stopsList, setstopsList] = useState([]);
     useEffect(() => {
-        const client = createClient(vbbProfile, "my-awesome-program");
-        if (stop !== "") {
-            client
-                .locations(stop, { results: 5 })
-                .then((stopsList) => {
-                    setstopsList(stopsList);
-                })
-                .catch(console.error);
-        }
+        axios.get(`https://berlin-trasnportation-app.herokuapp.com/api/getlocation/${stop}`)
+            .then((stopsList) => { setstopsList(stopsList.data); })
+            .catch(console.error);
     }, [stop]);
 
     return (

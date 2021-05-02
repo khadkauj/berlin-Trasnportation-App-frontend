@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom'
 import DoneIcon from '@material-ui/icons/Done';
 import ClearIcon from '@material-ui/icons/Clear';
 import "./TableViewForStops.css"
-const createClient = require('hafas-client')
-const vbbProfile = require('hafas-client/p/vbb')
+import axios from "axios"
 
 
 const FavouriteStops = ({ state, ids }) => {
-    const client = createClient(vbbProfile, 'my-awesome-program')
+    console.log("ids", ids);
     const [favouriteStops, setfavouriteStops] = useState([])
     useEffect(() => {
         let arrayOfPromises = ids?.map(id => (
-            client.stop(id)
-                .then(data => data) //returning data
-                .catch(console.error)))
+            axios.get(`https://berlin-trasnportation-app.herokuapp.com/api/stopdetails/${id}`)
+                .then(stopsList => stopsList.data)
+                .catch(console.error)
+        ))
 
         if (arrayOfPromises !== undefined) {
             Promise.all(arrayOfPromises).then(data => {
@@ -24,6 +24,9 @@ const FavouriteStops = ({ state, ids }) => {
             )
         }
     }, [])
+
+    console.log("fav", favouriteStops);
+
     return (
         <div className="main__div" >
             {/* Stops though favourite but if have no availability won't appear */}
@@ -47,8 +50,8 @@ const FavouriteStops = ({ state, ids }) => {
                                 </TableHead>
                                 <TableBody>
                                     {favouriteStops.map((row) => (
-                                        row !== undefined ?
-                                            <TableRow key={row.id}>
+                                        row === undefined || row?.isHafasError === true ? <></> :
+                                            <TableRow key={row.id ? row.id : Math.random()}>
                                                 <TableCell component="th" scope="row">
                                                     {row?.name}
                                                 </TableCell>
@@ -60,7 +63,7 @@ const FavouriteStops = ({ state, ids }) => {
                                                 <TableCell >{row?.products?.regional === true ? <DoneIcon /> : <ClearIcon></ClearIcon>}</TableCell>
                                                 <TableCell ><Link to={row.id}>See more</Link></TableCell>
 
-                                            </TableRow> : < ></>
+                                            </TableRow>
 
                                     ))}
                                 </TableBody>
