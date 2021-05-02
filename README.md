@@ -14,10 +14,10 @@ Create a simple web app that uses the public transport API of Berlin
 which transport options are available in the resulting stop(s). Example transport options are:
 bus/tram/ferry/suburban/express/regional.
   
-    ➡hafas client method(https://github.com/public-transport/hafas-client/blob/5
-    /docs/readme.md) was used to retrieve data.We use an express application to
-    query our data and provide it to our ReactJs application which then displays
-    all our data in a table
+    ➡The hafas client method(https://github.com/public-transport/hafas-client/blob/5/docs/readme.md)
+    which gets all data for us is written in express application. Axios is used to fetch corresponding
+    data using the rest APIs written in the express application and use in reactJs. On providing input
+    fields, user can see matching stops and the availability of corresponding transport options in a table.
 
 If the user selects a stop, route the user to the detail page of that stop where the user can see
 the departures from the stop. Use the API provided results to show as much useful information
@@ -31,11 +31,12 @@ about the selected stop and its departures as possible to make the app helpful.
 Users should be able to mark some stops favorite so that they can quickly access them instead
 of searching every time. This information needs to be client-side only.
 
-    ➡Users can also mark the stops as favourite, and if it has any
-    availability it will be rendered in Favourite stops component. These
-    datas are stores in local storage; I did some engineering to set
-    the array of stops in local storage.
+    ➡ Users can also mark stops as favourite, and if it has any
+    availability it will be rendered in Favourite stops component.
     
-    ➡ We might have also used firebase or similar services with 
-    login/logout functionalities where users can save all his data
-    speicific to them, but I though it will be unnecessary.
+    ➡ In the application, I engineered local storage
+    to store client-side data. The data, however, will be specific to 
+    the browser and not the user and get erased if the user clears the local
+    storage. We could have instead used firebase Gmail authentication and 
+    firestore to store the data really  from the client-side perspective,
+    but I though it will be unnecessary.
